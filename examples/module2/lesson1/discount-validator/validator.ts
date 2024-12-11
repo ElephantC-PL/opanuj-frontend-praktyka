@@ -17,5 +17,13 @@ export function formValidator(
     errors.push('Age must be a positive number');
   }
 
+  if (firstName.length < 2 || lastName.length < 2) {
+    errors.push('First name and last name must have at list one sign');
+  }
+
+  if (Number.isNaN(age)) {
+    errors.push('Age must be a number');
+  }
+
   return errors;
 }

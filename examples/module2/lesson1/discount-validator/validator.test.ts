@@ -16,4 +16,20 @@ describe('Form validation', () => {
         const errors = formValidator('John', 'Doe', -1);
         expect(errors).toContain('Age must be a positive number');
     });
+
+    test('should return empty array if there isnt any errors', () => {
+        const errors = formValidator('John', 'Doe', 30);
+        expect(errors).toEqual([]);
+        expect(errors.length).toBe(0);
+    });
+
+    test('should return an error if first name or lastname are shorter than 2', () => {
+        const errors = formValidator('J', 'D', 30);
+        expect(errors).toContain('First name and last name must have at list one sign');
+    });
+
+    test('should return an error if age is not a number', () => {
+        const errors = formValidator('Jon', 'Doe', NaN);
+        expect(errors).toContain('Age must be a number');
+    })
 });

@@ -1,13 +1,14 @@
-export function f1(a, b) {
+export const addition = (a: number, b: number): number => {
   return a + b;
 }
-export function f2(a, b) {
+export const subtraction = (a: number, b: number): number => {
   return a - b;
 }
-export function f3(a, b) {
+export const multiplication = (a: number, b: number): number => {
   return a * b;
 }
 
-export function f4(a, b) {
+export const division = (a: number, b: number): number|string  => {
+  if(b === 0) return 'Cannot divide by zero'
   return a / b;
 }

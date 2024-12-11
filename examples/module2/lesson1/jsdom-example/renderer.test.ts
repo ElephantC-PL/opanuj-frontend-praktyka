@@ -25,4 +25,20 @@ describe('User renderer', () => {
     renderItems(container, users);
     expect(Array.from(container.querySelectorAll('li'))).toHaveLength(2);
   });
+
+  test('should render for admin list elements text "(Admin)"', () => {
+    localStorage.setItem('userRole', 'admin');
+
+    const container = document.createElement('div');
+    renderItems(container, users);
+    expect(container.querySelectorAll('li')[1].textContent).toContain('(Admin)');
+  })
+
+  test('should render for list elements in pattern "Name: {name}, Age: {age}"', () => {
+    localStorage.setItem('userRole', 'admin');
+
+    const container = document.createElement('div');
+    renderItems(container, users);
+    expect(container.querySelectorAll('li')[0].textContent).toContain('Name: John, Age: 30');
+  })
 });
