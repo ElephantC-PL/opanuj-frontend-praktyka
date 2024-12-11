@@ -1,5 +1,4 @@
-
-<input [(ngModel)]="newTitle"/> <button (click)="addBook()">Add</button>
+<input [(ngModel)]="newTitle"/> <button class="add" (click)="addBook()">Add</button>
 <ul>
   @for(book of books; track book){
     <li>id: {{book.id}} name: {{book.name}} <button (click)="deleteBook(book.id)">x</button></li>

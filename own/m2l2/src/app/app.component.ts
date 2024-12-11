@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
-import { FormsModule } from '@angular/forms'; 
+import { FormsModule } from '@angular/forms';
+import { RouterOutlet } from '@angular/router';
 
 interface Book {
   id: number,
@@ -9,11 +10,11 @@ interface Book {
 @Component({
   selector: 'app-root',
   standalone: true,
-  imports: [ FormsModule],
+  imports: [FormsModule],
   templateUrl: './app.component.html',
   styleUrl: './app.component.scss'
 })
-export class AppComponent {
+export class AppComponent { 
   title = 'library';
   books: Book[] = [{id: 1, name: "aaaa"}, {id: 2, name: "bbbbb"}];
   newTitle = "";

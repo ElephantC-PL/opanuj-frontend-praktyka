@@ -3,7 +3,7 @@
   "version": 1,
   "newProjectRoot": "projects",
   "projects": {
-    "library": {
+    "m2l2": {
       "projectType": "application",
       "schematics": {
         "@schematics/angular:component": {
@@ -17,7 +17,7 @@
         "build": {
           "builder": "@angular-devkit/build-angular:application",
           "options": {
-            "outputPath": "dist/library",
+            "outputPath": "dist/m2l2",
             "index": "src/index.html",
             "browser": "src/main.ts",
             "polyfills": [
@@ -64,10 +64,10 @@
           "builder": "@angular-devkit/build-angular:dev-server",
           "configurations": {
             "production": {
-              "buildTarget": "library:build:production"
+              "buildTarget": "m2l2:build:production"
             },
             "development": {
-              "buildTarget": "library:build:development"
+              "buildTarget": "m2l2:build:development"
             }
           },
           "defaultConfiguration": "development"
